@@ -16,22 +16,20 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-consolidate_cart = []
+cart2 =[]
+
 cart.each do |x|
-   
-   consolidate_cart << x
-   consolidate_cart.each do |y|
-   if x[:item] == consolidate_cart[y][:item]
-     consolidate_cart[y][:count] += 1
-   else
-     consolidate_cart[y][:count] = 1
-   end
-   
-   # if the item name is the same as one already in the hash add one to the count instead of adding that hash
-   
- end
+p x[:item]
+x[:count] =1
+if cart2.include?(x)
+ puts cart2[cart2.index(x)][:count] +=1
+else
+  cart2 << x
 end
-return consolidate_cart
+
+
+end
+return cart2
 end
 
 
